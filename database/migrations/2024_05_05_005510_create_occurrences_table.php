@@ -19,11 +19,13 @@ return new class extends Migration
             $table->unsignedBigInteger('idTrash')->unsigned();
             $table->foreign('idTrash')->references('id')->on('trashes')->onDelete('cascade');
 
-            $table->string('description');
-            $table->string('zipcode');
-            $table->string('street');
-            $table->string('district');
-            $table->string('locality');
+            $table->string('descricao');
+            $table->string('cep');
+            $table->string('logradouro');
+            $table->string('distrito');
+            $table->string('localidade');
+            $table->string('complemento');
+            $table->string('numero');
             $table->integer('status'); // 0 ativo - 1 solucionado - 2 outros
 
 

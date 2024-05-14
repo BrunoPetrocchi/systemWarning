@@ -9,7 +9,7 @@ class Occurrence extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'idCity','idTrash','description','zipcode','street','district','locality','status'
+        'idCity','idTrash','descricao','cep','logradouro','bairro','complemento','numero','localidade','status'
     ];
 
     public function City(): HasMany

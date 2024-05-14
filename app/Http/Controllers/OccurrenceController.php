@@ -31,11 +31,13 @@ class OccurrenceController extends Controller
         [
                 'idCity' => 'required',
                 'idTrash' => 'required',
-                'description' => 'required',
-                'zipcode' => 'required',
-                'street' => 'required',
-                'district' => 'required',
-                'locality' => 'required',
+                'descricao' => 'required',
+                'cep' => 'required',
+                'logradouro' => 'required',
+                'bairro' => 'required',
+                'localidade' => 'required',
+                'complemento' => 'required',
+                'numero' => 'required',
                 'status' => 'required',
         ]);
         if($validator->fails()){
@@ -47,11 +49,13 @@ class OccurrenceController extends Controller
             $ocorrencia = Occurrence::create([
                 'idCity' => $request->idCity,
                 'idTrash' => $request->idTrash,
-                'description' => $request->description,
-                'zipcode' => $request->zipcode,
-                'street' => $request->street,
-                'district' => $request->district,
-                'locality' => $request->locality,
+                'descricao' => $request->descricao,
+                'cep' => $request->cep,
+                'logradouro' => $request->logradouro,
+                'bairro' => $request->bairro,
+                'localidade' => $request->localidade,
+                'complemento' => $request->complemento,
+                'numero' => $request->numero,
                 'status' => $request->status,
             ]);
 
@@ -108,14 +112,16 @@ class OccurrenceController extends Controller
     {
         $validator = Occurrence::make($request->all(),
         [
-                'idCity' => 'required',
-                'idTrash' => 'required',
-                'description' => 'required',
-                'zipcode' => 'required',
-                'street' => 'required',
-                'district' => 'required',
-                'locality' => 'required',
-                'status' => 'required',
+            'idCity' => 'required',
+            'idTrash' => 'required',
+            'descricao' => 'required',
+            'cep' => 'required',
+            'logradouro' => 'required',
+            'bairro' => 'required',
+            'localidade' => 'required',
+            'complemento' => 'required',
+            'numero' => 'required',
+            'status' => 'required',
         ]);
         if($validator->fails()){
             return response()->json([
@@ -128,11 +134,13 @@ class OccurrenceController extends Controller
                 $ocorrencia->update([
                     'idCity' => $request->idCity,
                     'idTrash' => $request->idTrash,
-                    'description' => $request->description,
-                    'zipcode' => $request->zipcode,
-                    'street' => $request->street,
-                    'district' => $request->district,
-                    'locality' => $request->locality,
+                    'descricao' => $request->descricao,
+                    'cep' => $request->cep,
+                    'logradouro' => $request->logradouro,
+                    'bairro' => $request->bairro,
+                    'localidade' => $request->localidade,
+                    'complemento' => $request->complemento,
+                    'numero' => $request->numero,
                     'status' => $request->status,
                 ]);
                 return response()->json([
