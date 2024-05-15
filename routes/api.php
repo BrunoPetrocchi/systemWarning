@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::put('/trash/{id}/update', [TrashController::class,'update']);
     Route::delete('/trash/{id}/delete', [TrashController::class,'delete']);
 
-    Route::post('/occurrence', [OccurrenceController::class, 'store']);
+    Route::post('/occurrence/create', [OccurrenceController::class, 'store']);
     Route::get('/occurrence', [OccurrenceController::class, 'index']);
     Route::get('/occurrence/{id}', [OccurrenceController::class,'show']);
     Route::get('/occurrence/{id}/edit', [OccurrenceController::class,'edit']);
